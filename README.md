@@ -107,7 +107,7 @@ Resultado esperado: 100 testes passando e 100% de cobertura de `src/`.
 | `tests/test_combos.py` | 18 | Os combos promocionais |
 
 Antes da modernização, o projeto tinha 1 teste e 71% de cobertura. O resumo completo está em
-`docs/evidencias_testes.md`.
+`docs/evidencias_testes.pdf`.
 
 ## 5. Análises de segurança
 
@@ -138,7 +138,7 @@ safety scan --target . < NUL
 O arquivo `dependencias_projeto.txt` é gerado com `python -m pip freeze` na venv do projeto. O
 `safety scan` exige conta no serviço Safety; a tentativa sem conta está registrada, e o resultado
 vem do `safety check`. As saídas estão em `docs/evidencias/antes/` e `docs/evidencias/depois/`
-(arquivos 05 a 07), e a análise completa em `docs/seguranca_antes_depois.md`.
+(arquivos 05 a 07), e a análise completa em `docs/seguranca_antes_depois.pdf`.
 
 ## 6. Estrutura de pastas
 
@@ -165,15 +165,16 @@ supermarket-receipt-modernizacao/
 │   ├── test_comportamento_legado.py   caracterização do código original
 │   ├── test_combos.py                 combos promocionais
 │   └── ...                            demais testes (seção 4)
-├── docs/                     documentos do trabalho, em .md e .pdf (seção 8)
+├── docs/                     documentos do trabalho, em PDF (seção 8)
 │   ├── diagnostico_tecnico.pdf
 │   ├── requisitos.pdf
 │   ├── plano_contingencia.pdf
 │   ├── padroes_projeto.pdf
 │   ├── seguranca_antes_depois.pdf
 │   ├── evidencias_testes.pdf
-│   ├── ...                   demais documentos e as fontes .md
-│   ├── diagramas/            diagramas de classes antes e depois (fonte Mermaid e imagens)
+│   ├── licoes_aprendidas.pdf
+│   ├── registro_refatoracao.pdf
+│   ├── diagramas/            diagramas de classes antes e depois, em PNG
 │   └── evidencias/
 │       ├── antes/            saídas do código original
 │       └── depois/           saídas do código modernizado
@@ -194,11 +195,11 @@ supermarket-receipt-modernizacao/
 | Itens mantidos: D5, D8 (nome `TEN_PERCENT_DISCOUNT`), D10, D12 e D13 | Preservar as regras e os valores do recibo, como pede o enunciado, e comparar saídas idênticas antes e depois. A correção proposta de cada um está no plano de contingência, seção 3.1 |
 
 Os detalhes, com diagramas e trechos de código antes e depois, estão em
-`docs/padroes_projeto.md`.
+`docs/padroes_projeto.pdf`.
 
 ## 8. Documentos
 
-Cada documento está em Markdown (`.md`, a fonte) e em PDF (`.pdf`) na pasta `docs/`.
+Cada documento está em PDF na pasta `docs/`.
 
 | Documento | Conteúdo |
 |---|---|
