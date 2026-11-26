@@ -9,8 +9,9 @@ O sistema simula o caixa de um supermercado: o cliente coloca produtos no carrin
 busca os preços no catálogo, aplica as ofertas e os combos cadastrados e devolve um recibo com
 itens, descontos e total.
 
-- Código original: commit `c72d68a` do repositório-base.
-- Entrega: branch `modernizacao`.
+O código original corresponde ao commit `c72d68a` do repositório-base
+(emilybache/SupermarketReceipt-Refactoring-Kata), que neste repositório é o commit `479ca4b`.
+A entrega está na branch `modernizacao`.
 
 ## 1. Dependências
 
@@ -25,14 +26,21 @@ A lista exata das 24 bibliotecas instaladas, com as versões usadas nas evidênc
 ## 2. Ambiente
 
 Os testes e as evidências foram gerados em Windows 10, no terminal **cmd**, com um ambiente
-virtual (venv) na pasta `python_pytest`.
+virtual (venv) na raiz do repositório.
 
 Use o cmd, e não o PowerShell, para gerar arquivos de saída com `>`. O PowerShell grava esses
 arquivos em outra codificação (UTF-16), e eles ficam ilegíveis no GitHub.
 
 ## 3. Execução
 
-Na pasta `python_pytest`:
+Clone o repositório e entre na pasta dele:
+
+```
+git clone --branch modernizacao https://github.com/AngeloMeirelles/supermarket-receipt-modernizacao
+cd supermarket-receipt-modernizacao
+```
+
+Depois, na raiz do repositório:
 
 **Windows (cmd)**
 
@@ -51,8 +59,8 @@ python -m pip install -r requirements.txt
 ```
 
 O sistema não tem programa principal: ele é usado pelos testes, que montam o catálogo, o caixa
-e o carrinho. Exemplo de uso, como nos testes. Para rodá-lo fora do pytest, na pasta
-`python_pytest`, defina antes o caminho de importação com `set PYTHONPATH=src` (cmd) ou
+e o carrinho. Exemplo de uso, como nos testes. Para rodá-lo fora do pytest, na raiz do
+repositório, defina antes o caminho de importação com `set PYTHONPATH=src` (cmd) ou
 `export PYTHONPATH=src` (Linux ou macOS):
 
 ```python
@@ -79,7 +87,7 @@ print(receipt.total_price())   # 22.5
 
 ## 4. Testes
 
-Com a venv ativa, na pasta `python_pytest`:
+Com a venv ativa, na raiz do repositório:
 
 ```
 pytest -v
@@ -111,12 +119,12 @@ As ferramentas ficam num ambiente virtual **separado**, fora do projeto. Se foss
 venv do projeto, o pip-audit e o Safety analisariam também as bibliotecas delas.
 
 ```
-py -m venv ..\..\venv-ferramentas
-..\..\venv-ferramentas\Scripts\activate
+py -m venv ..\venv-ferramentas
+..\venv-ferramentas\Scripts\activate
 python -m pip install bandit==1.9.4 pip-audit==2.10.1 safety==3.8.1
 ```
 
-Comandos, na pasta `python_pytest` (troque `depois` por `antes` para a linha de base):
+Comandos, na raiz do repositório (troque `depois` por `antes` para a linha de base):
 
 ```
 bandit -r src
@@ -134,8 +142,11 @@ vem do `safety check`. As saídas estão em `docs/evidencias/antes/` e `docs/evi
 
 ## 6. Estrutura de pastas
 
+A raiz deste repositório corresponde à pasta `python_pytest` do repositório-base, com o
+histórico de commits dessa pasta. A estrutura segue a sugerida no enunciado:
+
 ```
-python_pytest/
+supermarket-receipt-modernizacao/
 ├── README.md
 ├── requirements.txt          igual ao original
 ├── pytest.ini                coloca src e tests no caminho de importação
@@ -151,7 +162,17 @@ python_pytest/
 │   ├── discount_calculator.py      descontos das ofertas
 │   └── bundle_calculator.py        descontos dos combos
 ├── tests/                    testes e o catálogo de teste (fake_catalog.py)
-├── docs/                     documentos do trabalho (.md e .pdf)
+│   ├── test_comportamento_legado.py   caracterização do código original
+│   ├── test_combos.py                 combos promocionais
+│   └── ...                            demais testes (seção 4)
+├── docs/                     documentos do trabalho, em .md e .pdf (seção 8)
+│   ├── diagnostico_tecnico.pdf
+│   ├── requisitos.pdf
+│   ├── plano_contingencia.pdf
+│   ├── padroes_projeto.pdf
+│   ├── seguranca_antes_depois.pdf
+│   ├── evidencias_testes.pdf
+│   ├── ...                   demais documentos e as fontes .md
 │   ├── diagramas/            diagramas de classes antes e depois (fonte Mermaid e imagens)
 │   └── evidencias/
 │       ├── antes/            saídas do código original
@@ -159,11 +180,6 @@ python_pytest/
 └── apresentacao/
     └── slides.pdf
 ```
-
-A pasta `docs` fica dentro de `python_pytest`, e não na raiz do repositório como na estrutura
-sugerida no enunciado, porque o repositório-base tem versões do kata em várias linguagens. O
-enunciado diz que a estrutura é ilustrativa e pede para preservar os arquivos do
-repositório-base, então as outras pastas não foram tocadas.
 
 ## 7. Decisões arquiteturais
 

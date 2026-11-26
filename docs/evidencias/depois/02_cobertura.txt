@@ -1,7 +1,7 @@
 Cobertura de testes - código modernizado
-Pasta: python_pytest (código do commit 0b70856 da branch modernizacao)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código do commit 5968902 da branch modernizacao
 Comparação: 71% no código original só com o teste original (antes/02_cobertura.txt) e 100% com a caracterização (antes/04_caracterizacao_cobertura.txt). A meta do RNF03 é ficar acima de 90%
-Observação: gerado de novo no commit 0b70856, que só retirou comentários e docstrings do código. A versão anterior desta evidência era do commit 4bdccf0. A cobertura continua em 100%; o total de instruções passou de 271 para 263 porque a ferramenta deixa de contar, por padrão, os métodos cujo corpo é só `...`: são os 4 métodos abstratos, com 2 linhas cada (o decorador e o def)
+Observação: gerado de novo no commit 5968902, que só retirou comentários e docstrings do código. A versão anterior desta evidência era do commit b99969f. A cobertura continua em 100%; o total de instruções passou de 271 para 263 porque a ferramenta deixa de contar, por padrão, os métodos cujo corpo é só `...`: são os 4 métodos abstratos, com 2 linhas cada (o decorador e o def)
 
 Comandos:
   coverage run --source=src -m pytest

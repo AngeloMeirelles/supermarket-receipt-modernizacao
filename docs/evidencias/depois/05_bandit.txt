@@ -1,9 +1,9 @@
 Análise de segurança do código com Bandit - código modernizado
-Pasta: python_pytest (código do commit 0b70856 da branch modernizacao)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código do commit 5968902 da branch modernizacao
 Ferramenta: Bandit 1.9.4, a mesma versão e o mesmo ambiente separado da linha de base (D:\faculdade\alta-qualidade-av3\venv-ferramentas), fora do projeto
 Escopo: pasta src, que agora tem 10 arquivos, incluindo o código novo das ofertas, da fábrica, das calculadoras e dos combos. Os testes ficam fora, pelo mesmo motivo da linha de base
 Comparação: na linha de base, 133 linhas analisadas e nenhum problema (antes/05_bandit.txt). Depois da modernização, 292 linhas e nenhum problema
-Observação: gerado de novo no commit 0b70856, que só retirou comentários e docstrings do código. A versão anterior desta evidência era do commit de0a124. Na versão anterior eram 319 linhas; as docstrings retiradas contavam como linhas de código
+Observação: gerado de novo no commit 5968902, que só retirou comentários e docstrings do código. A versão anterior desta evidência era do commit ac20a64. Na versão anterior eram 319 linhas; as docstrings retiradas contavam como linhas de código
 
 Comandos:
   bandit --version

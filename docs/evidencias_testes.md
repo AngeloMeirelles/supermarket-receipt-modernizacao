@@ -14,16 +14,16 @@ novo para este documento: todos os números vêm desses arquivos.
 
 | Momento | Código | Testes | Resultado | Cobertura de `src/` | Evidência |
 |---|---|---|---|---|---|
-| Código original | commit `c72d68a` | 1 (o teste original do kata) | 1 passou | 71% (129 linhas, 37 sem teste) | `antes/01_pytest.txt`, `antes/02_cobertura.txt` |
-| Com a caracterização (E1) | commit `c72d68a`, sem nenhuma mudança em `src/` | 41 (40 de caracterização + o original) | 41 passaram | 100% (129 linhas) | `antes/03_caracterizacao_pytest.txt`, `antes/04_caracterizacao_cobertura.txt` |
-| Final | branch `modernizacao`, commits `0b70856` e `b968277` | 100 | 100 passaram | 100% (263 linhas) | `depois/01_pytest.txt`, `depois/02_cobertura.txt` |
+| Código original | commit `479ca4b` | 1 (o teste original do kata) | 1 passou | 71% (129 linhas, 37 sem teste) | `antes/01_pytest.txt`, `antes/02_cobertura.txt` |
+| Com a caracterização (E1) | commit `479ca4b`, sem nenhuma mudança em `src/` | 41 (40 de caracterização + o original) | 41 passaram | 100% (129 linhas) | `antes/03_caracterizacao_pytest.txt`, `antes/04_caracterizacao_cobertura.txt` |
+| Final | branch `modernizacao`, commits `5968902` e `303eba8` | 100 | 100 passaram | 100% (263 linhas) | `depois/01_pytest.txt`, `depois/02_cobertura.txt` |
 
 A meta da equipe era ficar acima de 90% de cobertura (RNF03). O enunciado não fixa um
 percentual.
 
-No final, a cobertura (`depois/02_cobertura.txt`) foi medida no commit `0b70856`, que retirou os
+No final, a cobertura (`depois/02_cobertura.txt`) foi medida no commit `5968902`, que retirou os
 comentários e as docstrings do código, e a execução dos testes (`depois/01_pytest.txt`) no commit
-`b968277`, que traduziu para o inglês os nomes dos testes novos. O código de `src/` é o mesmo
+`303eba8`, que traduziu para o inglês os nomes dos testes novos. O código de `src/` é o mesmo
 nos dois commits.
 
 ### 2.1 Cobertura por arquivo
@@ -61,7 +61,7 @@ No código final:
 O `receipt_printer.py` passou a contar na cobertura de `src/` na E3, quando saiu da pasta de
 testes (D14). Por isso o total de linhas não é comparável diretamente entre antes e depois.
 O total final era de 271 linhas até a retirada dos comentários e das docstrings (commit
-`0b70856`). Com essa retirada, os 4 métodos abstratos passaram a ter só `...` no corpo, e a
+`5968902`). Com essa retirada, os 4 métodos abstratos passaram a ter só `...` no corpo, e a
 ferramenta de cobertura deixa de contar esses métodos por padrão, com 2 linhas cada: no
 `offer_strategies.py`, o total passou de 59 para 51 linhas.
 
@@ -103,15 +103,15 @@ A prova de que a modernização não mudou nenhum resultado está em três ponto
    valor esperado de cada teste é o que o código original devolve, inclusive nos itens mantidos
    D5, D8, D10, D12 e D13.
 2. Esses mesmos 40 testes passaram no código final (`depois/01_pytest.txt`) sem nenhuma
-   alteração. O arquivo `tests/test_comportamento_legado.py` é idêntico ao do commit `60f645f`,
+   alteração. O arquivo `tests/test_comportamento_legado.py` é idêntico ao do commit `9ce6c2a`,
    em que foi criado. Isso pode ser conferido com:
 
    ```
-   git diff 60f645f HEAD -- python_pytest/tests/test_comportamento_legado.py
+   git diff 9ce6c2a HEAD -- tests/test_comportamento_legado.py
    ```
 
 3. O teste original `tests/test_supermarket.py` também não foi alterado em relação ao commit
-   `c72d68a` (RNF01).
+   `479ca4b` (RNF01).
 
 Os testes de caracterização também passaram em cada commit intermediário, que é o critério de
 aceitação da seção 6.1 do plano de contingência. Como nenhum resultado podia mudar, qualquer
@@ -147,7 +147,7 @@ A ligação de cada requisito ao teste que o verifica está na seção 7.2 dos r
 
 ## 6. Como reproduzir
 
-Na pasta `python_pytest`, com a venv do projeto ativa (passo a passo no README):
+Na raiz do repositório, com a venv do projeto ativa (passo a passo no README):
 
 ```
 pytest -v
@@ -158,7 +158,7 @@ coverage report -m
 Para rodar a caracterização sobre o código original:
 
 ```
-git checkout 60f645f
+git checkout 9ce6c2a
 pytest -v
 git checkout modernizacao
 ```

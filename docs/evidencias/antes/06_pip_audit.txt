@@ -1,5 +1,5 @@
 Auditoria das dependências com pip-audit - código original
-Pasta: python_pytest (código do commit c72d68a do repositório original)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código original do commit 479ca4b
 Ferramenta: pip-audit 2.10.1, instalada em ambiente separado (D:\faculdade\alta-qualidade-av3\venv-ferramentas), fora do projeto
 Escopo: as 24 bibliotecas instaladas na venv do projeto, listadas com pip freeze em dependencias_projeto.txt
 

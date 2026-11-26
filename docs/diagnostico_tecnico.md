@@ -9,7 +9,7 @@ compra do carrinho até o recibo. Depois, os testes foram executados e a cobertu
 medida. As saídas estão em `docs/evidencias/antes/`.
 
 Os números de linha citados são do código original. Para ver um arquivo como era:
-`git show c72d68a:python_pytest/src/shopping_cart.py`.
+`git show 479ca4b:src/shopping_cart.py`.
 
 ## 2. Como o sistema funciona
 

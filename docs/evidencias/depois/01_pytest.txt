@@ -1,5 +1,5 @@
 Execução dos testes - código modernizado
-Pasta: python_pytest (código do commit b968277 da branch modernizacao)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código do commit 303eba8 da branch modernizacao
 Testes: 100 no total
   tests/test_supermarket.py: 1, o teste original, sem alteração
   tests/test_comportamento_legado.py: 40, de caracterização, sem alteração desde que foram escritos
@@ -8,7 +8,7 @@ Testes: 100 no total
   tests/test_discount_calculator.py: 6, da calculadora de descontos
   tests/test_combos.py: 18, dos combos
 Comparação: o código original tinha 1 teste (antes/01_pytest.txt); com a caracterização, 41 (antes/03_caracterizacao_pytest.txt)
-Observação: gerado de novo no commit b968277, que traduziu para o inglês os nomes dos testes novos e renomeou três arquivos de teste, sem mudar o código de src/ nem o resultado. As versões anteriores desta evidência eram dos commits 4bdccf0 e 0b70856
+Observação: gerado de novo no commit 303eba8, que traduziu para o inglês os nomes dos testes novos e renomeou três arquivos de teste, sem mudar o código de src/ nem o resultado. As versões anteriores desta evidência eram dos commits b99969f e 5968902
 
 Comando:
   pytest -v

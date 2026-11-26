@@ -1,5 +1,5 @@
 Execução dos testes - código original
-Pasta: python_pytest (código do commit c72d68a do repositório original)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código original do commit 479ca4b
 
 Comando:
   pytest -v

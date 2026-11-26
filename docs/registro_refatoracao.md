@@ -21,19 +21,19 @@ Esses critérios correspondem aos critérios de aceitação da seção 6 do plan
 
 | Etapa | Commit | O que mudou | Item do diagnóstico | Testes | Cobertura de `src/` |
 |---|---|---|---|---|---|
-| E3 | `1eb7aad` | ReceiptPrinter passa de `tests/` para `src/` | D14 | 41 passaram | 100% (173 linhas) |
-| E4 | `014fc79` | Nomes das variáveis internas | D7 | 41 passaram | 100% (172 linhas) |
-| E4 | `b0ea27c` | Constantes no lugar dos números soltos | D8 | 41 passaram | 100% (177 linhas) |
-| E4 | `9ae05b4` | Anotações de tipo | D9 | 41 passaram | 100% (184 linhas) |
-| E5 | `09b4a70` | Uma classe para cada oferta (Strategy) | D1 (em parte), D2 e D6 | 41 passaram | 100% (212 linhas) |
-| E5 | `e5c23a6` | Testes de cada oferta isolada | RNF05 e D11 | 60 passaram | 100% (212 linhas) |
-| E6 | `9f0255c` | Conta comum das ofertas por quantidade numa classe base (Template Method) | D3 | 60 passaram | 100% (227 linhas) |
-| E6 | `60fb453` | Testes da classe base | RNF04 | 68 passaram | 100% (227 linhas) |
-| E7 | `0b1c7aa` | Fábrica simples escolhe a estratégia pelo tipo da oferta, com os testes da fábrica | D1 | 76 passaram | 100% (230 linhas) |
-| E8 | `a123262` | Cálculo dos descontos sai do carrinho para uma classe própria | D4 | 76 passaram | 100% (239 linhas) |
-| E8 | `e40c587` | Testes da calculadora de descontos | RNF05 | 82 passaram | 100% (239 linhas) |
-| E9 | `89f6a53` | Combos promocionais, com os testes dos combos | RF11 a RF17 | 100 passaram | 100% (271 linhas) |
-| Ajuste | `0b70856` | Retirada dos comentários e docstrings do código (seção 12) | nenhum | 100 passaram | 100% (263 linhas) |
+| E3 | `2aa65d5` | ReceiptPrinter passa de `tests/` para `src/` | D14 | 41 passaram | 100% (173 linhas) |
+| E4 | `fcdba85` | Nomes das variáveis internas | D7 | 41 passaram | 100% (172 linhas) |
+| E4 | `deb2dc5` | Constantes no lugar dos números soltos | D8 | 41 passaram | 100% (177 linhas) |
+| E4 | `0315d1a` | Anotações de tipo | D9 | 41 passaram | 100% (184 linhas) |
+| E5 | `c81e7ba` | Uma classe para cada oferta (Strategy) | D1 (em parte), D2 e D6 | 41 passaram | 100% (212 linhas) |
+| E5 | `609d76b` | Testes de cada oferta isolada | RNF05 e D11 | 60 passaram | 100% (212 linhas) |
+| E6 | `bd3f420` | Conta comum das ofertas por quantidade numa classe base (Template Method) | D3 | 60 passaram | 100% (227 linhas) |
+| E6 | `929a25b` | Testes da classe base | RNF04 | 68 passaram | 100% (227 linhas) |
+| E7 | `5516eb1` | Fábrica simples escolhe a estratégia pelo tipo da oferta, com os testes da fábrica | D1 | 76 passaram | 100% (230 linhas) |
+| E8 | `174260c` | Cálculo dos descontos sai do carrinho para uma classe própria | D4 | 76 passaram | 100% (239 linhas) |
+| E8 | `39be70b` | Testes da calculadora de descontos | RNF05 | 82 passaram | 100% (239 linhas) |
+| E9 | `83ae63c` | Combos promocionais, com os testes dos combos | RF11 a RF17 | 100 passaram | 100% (271 linhas) |
+| Ajuste | `5968902` | Retirada dos comentários e docstrings do código (seção 12) | nenhum | 100 passaram | 100% (263 linhas) |
 
 O número de linhas muda porque o ReceiptPrinter entrou na cobertura de `src/` na E3, uma variável foi retirada do caixa, as constantes foram acrescentadas, os `import` dos tipos também passaram a contar e a E5 criou o arquivo das ofertas. No ajuste final, a ferramenta deixou de contar os métodos abstratos com corpo `...`. A cobertura permaneceu em 100% em todas as etapas.
 
@@ -257,7 +257,7 @@ Antes da refatoração, esses testes não eram possíveis porque as contas estav
 
 ### 6.7 Conferência
 
-Os 41 testes que já existiam passaram sem nenhuma alteração depois do commit `09b4a70`, e os 60 passaram depois do commit `e5c23a6`. A cobertura de `src/` ficou em 100%, com 212 linhas, e o arquivo novo das ofertas está totalmente coberto.
+Os 41 testes que já existiam passaram sem nenhuma alteração depois do commit `c81e7ba`, e os 60 passaram depois do commit `609d76b`. A cobertura de `src/` ficou em 100%, com 212 linhas, e o arquivo novo das ofertas está totalmente coberto.
 
 ## 7. E6: conta comum das ofertas por quantidade (Template Method)
 
@@ -345,7 +345,7 @@ Foram acrescentados 8 testes em `tests/test_offer_strategies.py`:
 
 ### 7.6 Conferência
 
-- Os 60 testes que já existiam passaram sem nenhuma alteração depois do commit `9f0255c`, e os 68 passaram depois do commit `60fb453`.
+- Os 60 testes que já existiam passaram sem nenhuma alteração depois do commit `bd3f420`, e os 68 passaram depois do commit `929a25b`.
 - As classes novas foram comparadas com as da E5 em 8.448 casos, de 0 a 30 unidades, com frações e onze preços diferentes, exigindo o mesmo resultado até a última casa decimal. Não houve nenhuma diferença. Essa comparação foi feita com um script à parte, fora do repositório, como verificação adicional de arredondamento (risco R2 do plano).
 - A cobertura de `src/` ficou em 100%, com 227 linhas.
 
@@ -408,7 +408,7 @@ O arquivo `tests/test_offer_strategy_factory.py` (criado como `tests/test_fabric
 
 ### 8.5 Conferência
 
-Código e testes foram incluídos no mesmo commit (`0b1c7aa`). Sem os testes da fábrica, a linha que devolve `None` para tipo desconhecido ficaria sem teste, e a cobertura cairia para 99%, abaixo do critério definido para as etapas de refatoração. Os 68 testes que já existiam passaram sem alteração, os 76 passaram no total, e a cobertura de `src/` ficou em 100%, com 230 linhas.
+Código e testes foram incluídos no mesmo commit (`5516eb1`). Sem os testes da fábrica, a linha que devolve `None` para tipo desconhecido ficaria sem teste, e a cobertura cairia para 99%, abaixo do critério definido para as etapas de refatoração. Os 68 testes que já existiam passaram sem alteração, os 76 passaram no total, e a cobertura de `src/` ficou em 100%, com 230 linhas.
 
 ## 9. E8: cálculo dos descontos fora do carrinho
 
@@ -463,7 +463,7 @@ O arquivo `tests/test_discount_calculator.py` (criado como `tests/test_calculado
 
 ### 9.5 Conferência
 
-Os 76 testes que já existiam passaram sem nenhuma alteração depois do commit `a123262`, e os 82 passaram depois do commit `e40c587`. A cobertura de `src/` ficou em 100%, com 239 linhas.
+Os 76 testes que já existiam passaram sem nenhuma alteração depois do commit `174260c`, e os 82 passaram depois do commit `39be70b`. A cobertura de `src/` ficou em 100%, com 239 linhas.
 
 ## 10. Situação ao fim da refatoração
 
@@ -548,7 +548,7 @@ O recibo recebe quatro linhas de desconto: escova -1,00 e creme dental -1,50 do 
 
 ### 11.3 Nenhuma alteração nas ofertas existentes
 
-O commit `89f6a53` alterou apenas `src/model_objects.py` (classe nova `Bundle`) e `src/teller.py` (cadastro do combo e soma dos descontos de combo), além de criar `src/bundle_calculator.py` e `tests/test_combos.py`. Os arquivos das ofertas (`offer_strategies.py`, `offer_strategy_factory.py`, `discount_calculator.py` e `shopping_cart.py`) não foram modificados.
+O commit `83ae63c` alterou apenas `src/model_objects.py` (classe nova `Bundle`) e `src/teller.py` (cadastro do combo e soma dos descontos de combo), além de criar `src/bundle_calculator.py` e `tests/test_combos.py`. Os arquivos das ofertas (`offer_strategies.py`, `offer_strategy_factory.py`, `discount_calculator.py` e `shopping_cart.py`) não foram modificados.
 
 Isso atende ao RNF04: a nova promoção foi implementada sem alterar o código das ofertas existentes.
 
@@ -570,11 +570,11 @@ O arquivo `tests/test_combos.py` tem 18 testes. Os preços da escova e do creme 
 
 ### 11.5 Conferência
 
-Código e testes foram incluídos no mesmo commit (`89f6a53`). Os 82 testes que já existiam passaram sem alteração, os 100 passaram no total, e a cobertura de `src/` ficou em 100%, com 271 linhas.
+Código e testes foram incluídos no mesmo commit (`83ae63c`). Os 82 testes que já existiam passaram sem alteração, os 100 passaram no total, e a cobertura de `src/` ficou em 100%, com 271 linhas.
 
 ## 12. Retirada dos comentários e docstrings
 
-Commit: `0b70856`.
+Commit: `5968902`.
 
 Os comentários e as docstrings acrescentados durante a modernização foram retirados do código. O código original não tinha comentários nem docstrings, e os nomes das classes, dos métodos e das constantes indicam o papel de cada parte. As explicações sobre requisitos, defeitos mantidos e padrões continuam nos documentos da pasta `docs/`.
 
@@ -596,7 +596,7 @@ Conferência:
 
 ## 13. Tradução dos nomes dos testes
 
-Commit: `b968277`.
+Commit: `303eba8`.
 
 Os testes criados na modernização tinham nomes em português, enquanto o código do sistema e o teste original do kata estão em inglês. Para deixar o código uniforme, os identificadores desses testes foram traduzidos para o inglês: funções de teste, fixtures, funções auxiliares, constantes, a classe auxiliar da oferta "4 por 6,00" e as variáveis locais.
 

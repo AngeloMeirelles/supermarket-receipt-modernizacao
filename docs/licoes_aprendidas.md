@@ -54,7 +54,7 @@ fábrica simples, e os dois padrões que contam são o Strategy e o Template Met
 
 Os combos foram a última etapa (E9). Como as ofertas já estavam separadas em classes, os combos
 entraram em classes próprias (`Bundle` e `BundleCalculator`), sem alterar nenhum arquivo das
-ofertas. O diff do commit `89f6a53` é a prova do RNF04.
+ofertas. O diff do commit `83ae63c` é a prova do RNF04.
 
 ## 3. Decisões relevantes
 
@@ -87,8 +87,8 @@ escolher o combo de maior desconto, foram descartadas por deixar a regra mais di
 
 | Decisão inicial | Decisão final | Por que mudou | Onde ficou registrado |
 |---|---|---|---|
-| Acrescentar `PERCENT_DISCOUNT` como apelido de `TEN_PERCENT_DISCOUNT` | Manter só o nome original, sem apelido | Dois nomes para a mesma oferta seriam redundantes, e renomear quebraria o teste original (RNF01) | Requisitos, P2; commit `ef527b3` |
-| Corrigir o D12 (contar só pares inteiros) e o D13 (cobrar a fração de peso) | Manter os dois defeitos | Preservar os valores do recibo, como pede o enunciado, e permitir a comparação de saídas idênticas | Requisitos, P3; plano, seção 3.1; commit `ef527b3` |
+| Acrescentar `PERCENT_DISCOUNT` como apelido de `TEN_PERCENT_DISCOUNT` | Manter só o nome original, sem apelido | Dois nomes para a mesma oferta seriam redundantes, e renomear quebraria o teste original (RNF01) | Requisitos, P2; commit `b238df1` |
+| Corrigir o D12 (contar só pares inteiros) e o D13 (cobrar a fração de peso) | Manter os dois defeitos | Preservar os valores do recibo, como pede o enunciado, e permitir a comparação de saídas idênticas | Requisitos, P3; plano, seção 3.1; commit `b238df1` |
 
 As decisões foram tomadas na revisão de 25/11/2026 e registradas nos documentos antes de qualquer
 mudança no código. Assim, o código nunca precisou ser desfeito por causa delas.

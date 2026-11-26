@@ -1,5 +1,5 @@
 Auditoria das dependências com Safety - código original
-Pasta: python_pytest (código do commit c72d68a do repositório original)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código original do commit 479ca4b
 Ferramenta: Safety 3.8.1, instalada em ambiente separado (D:\faculdade\alta-qualidade-av3\venv-ferramentas), fora do projeto
 Escopo: as mesmas 24 bibliotecas de dependencias_projeto.txt (ver 06_pip_audit.txt)
 Limitação: o comando novo, safety scan, exige conta no serviço Safety. A tentativa foi feita sem conta e com entrada vazia na pergunta de login, e o comando parou com "EOF when reading a line". O resultado vem do comando antigo, safety check, que funciona sem conta e avisa que está descontinuado

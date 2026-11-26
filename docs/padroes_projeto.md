@@ -14,7 +14,7 @@ O trabalho aplica dois padrões de projeto: Strategy e Template Method. Uma fáb
 
 ## 2. Diagrama de classes antes
 
-Diagrama simplificado do código original (commit c72d68a), considerando apenas as classes que participam do cálculo dos descontos. Os trechos de código anteriores à modernização apresentados neste documento também correspondem a esse commit.
+Diagrama simplificado do código original (commit 479ca4b), considerando apenas as classes que participam do cálculo dos descontos. Os trechos de código anteriores à modernização apresentados neste documento também correspondem a esse commit.
 
 ```mermaid
 classDiagram

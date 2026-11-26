@@ -1,5 +1,5 @@
 Ambiente de execução - código modernizado
-Pasta: python_pytest (código do commit 4bdccf0 da branch modernizacao)
+Pasta: raiz do repositório (a pasta python_pytest do repositório-base), código do commit b99969f da branch modernizacao
 
 Comandos que geraram este arquivo:
   ver
