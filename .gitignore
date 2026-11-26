@@ -1,4 +1,6 @@
-venv
-.pytest_cache
-__pycache__
-.idea
+venv/
+__pycache__/
+.pytest_cache/
+.coverage
+*.received.txt
+.idea/
